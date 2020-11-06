@@ -1,56 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Portable Spreadsheet | About Portable Spreadsheet</title>
-    <meta name="description" content="Spreadsheet generator that keeps tracks of each operation in defined languages. Allows export sheets to Excel files (and see how all cells are computed).">
-    <meta name="keywords" content="spreadsheet, Excel, JSON, keeping track, operations, cells">
-    <meta name="author" content="Portable Spreadsheet team">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="container">
-        <nav>
-            <a href="/" id="logo">
-                <span id="icon">&nbsp;</span>
-                Portable Spreadsheet
-            </a>
-            
-<ul>
-    
-        <li>
-            <a href="/">About Portable Spreadsheet</a>
-        </li>
-    
-        <li>
-            <a href="report-issue.html">Report issue</a>
-        </li>
-    
-        <li>
-            <a href="license.html">MIT License</a>
-        </li>
-    
-        <li>
-            <a href="https://github.com/david-salac/Portable-spreadsheet-generator">GitHub Project</a>
-        </li>
-    
-</ul>
+import crinita as cr
 
-        </nav>
-        <section>
-            <main>
-                <div id="page-content">
-                    
-<header>
-    <h1>About Portable Spreadsheet</h1>
-    
-</header>
-<article>
-    
-    <div class="content">
-        <p>Author: David Salac <a href="http://github.com/david-salac">http://github.com/david-salac</a></p>
+# Converted using: https://markdowntohtml.com/
+
+html_code = """<p>Author: David Salac <a href="http://github.com/david-salac">http://github.com/david-salac</a></p>
 <p>Simple spreadsheet that keeps tracks of each operation in defined programming
 languages. Logic allows export sheets to Excel files (and see how each cell is
 computed), to the JSON strings with description of computation e. g. in native
@@ -595,7 +547,8 @@ Usage: <code>sheet.iloc[i,j] = OPERAND_1 &lt;&lt; OPERAND_2</code></li>
 </code></pre>
 <p>The priority of the operators is the same as in normal mathematics. If
 you need to modify priority, you need to use brackets, for example:</p>
-<pre><code class="lang-python"><span class="hljs-keyword">sheet.iloc[i,j] </span>= <span class="hljs-keyword">sheet.fn.brackets(OPERAND_1 </span>+ OPERAND_2)     * OPERAND_3 ** OPERAND_4
+<pre><code class="lang-python"><span class="hljs-keyword">sheet.iloc[i,j] </span>= <span class="hljs-keyword">sheet.fn.brackets(OPERAND_1 </span>+ OPERAND_2) \
+    * OPERAND_3 ** OPERAND_4
 </code></pre>
 <h4 id="brackets-for-computation">Brackets for computation</h4>
 <p>Brackets are technically speaking just another unary operator. They are
@@ -1002,8 +955,7 @@ directly use static method <code>generate_json_schema</code> of the <code>Spread
     spaces_replacement: <span class="hljs-built_in">str</span> = <span class="hljs-string">' '</span>,
     top_left_corner_text: <span class="hljs-built_in">str</span> = <span class="hljs-string">"Sheet"</span>,
     sep: <span class="hljs-built_in">str</span> = <span class="hljs-string">','</span>,
-    line_terminator: <span class="hljs-built_in">str</span> = <span class="hljs-string">'
-'</span>,
+    line_terminator: <span class="hljs-built_in">str</span> = <span class="hljs-string">'\n'</span>,
     na_rep: <span class="hljs-built_in">str</span> = <span class="hljs-string">''</span>,
     skip_labels: bool = <span class="hljs-literal">False</span>,
     skipped_label_replacement: <span class="hljs-built_in">str</span> = <span class="hljs-string">''</span>
@@ -1238,25 +1190,12 @@ sheet.to_excel(<span class="hljs-string">"OUTPUTS/student_marks.xlsx"</span>, sh
 <span class="hljs-comment"># Top print table as Markdown</span>
 print(sheet.to_markdown())
 </code></pre>
+"""
 
-        
-    </div>
-</article>
-                </div>
-
-                <aside>
-                    
-                    
-                    <h3>Portable Spreadsheet</h3>
-<div class="separator"></div>
-<p>Simple spreadsheet that keeps tracks of each operation in defined languages. Logic allows export sheets to Excel files (and see how each cell is computed), to the JSON strings with description of computation e. g. in native language. Other formats like HTML, CSV and Markdown (MD) are also supported.<p>Generated using <a href="http://www.crinita.com/">Crinita</a> version 0.1.1</p></p>
-                </aside>
-                <div class="clear"></div>
-            </main>
-            <footer>
-                <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />All the content is licensed under a <br><a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-            </footer>
-        </section>
-    </div>
-</body>
-</html>
+ENTITY = cr.Page(
+    title="About Portable Spreadsheet",
+    url_alias=None,  # Is homepage
+    large_image_path=None,
+    content=html_code,
+    menu_position=0
+)
